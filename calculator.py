@@ -10,7 +10,7 @@ def get_number(prompt):
 
 def get_operator(prompt):
     while True:
-        operator = input(prompt)
+        operator = input(prompt + " ").strip()
         if operator in ('*', '/', '-', '+'):
             break
         else:
