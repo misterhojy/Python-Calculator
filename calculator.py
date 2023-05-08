@@ -20,10 +20,10 @@ def get_operator(prompt):
 
 def halt(prompt):
     while True:
-        boolli = input(prompt).strip()
-        if boolli in ("Y", "y", "YES", "Yes", "yes"):
+        boolli = input(prompt).strip().lower()
+        if boolli in ("y", "yes"):
             return True
-        if boolli in ("N", "n", "NO", "No", "no"):
+        if boolli in ("n", "no"):
             return False
         else:
             print("Invalid response. Please enter [Y|N].")
@@ -65,10 +65,7 @@ class Calculator:
                 answers.append(result)
             if not halt("Would you like to continue? [Y|N]: "):
                 break
-        if len(answers) > 1:
-            c = "calculations"
-        else:
-            c = "calculation"
+        c = "calculations" if len(answers) > 1 else "calculation"
         print(f"You carried out {len(answers)} {c}. The results were {'; '.join(map(str, answers))}")
         if self.__goodbye_msg is not None:
             print(self.__goodbye_msg)
