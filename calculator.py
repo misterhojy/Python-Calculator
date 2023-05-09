@@ -56,8 +56,9 @@ class Calculator:
                 z = x / y
             else:
                 print("Can't divide by zero")
+            z.__float__()
         if z is not None:
-            print("{0:g} {1} {2:g} = {3}".format(x, opp, y, z))
+            print("{0:g} {1} {2:g} = {3:.1f}".format(x, opp, y, z))
         return z
 
     def run(self):
