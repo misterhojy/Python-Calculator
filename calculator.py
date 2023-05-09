@@ -2,7 +2,7 @@ def get_number(prompt):
     while True:
         try:
             num = input(prompt)
-            if num[0] == "+" or num[0] == "-" or "." in num:
+            if "+" in num or "." in num:
                 raise ValueError
             num = float(num)
             break
@@ -70,7 +70,7 @@ class Calculator:
             if not halt("Would you like to continue? [Y|N]: "):
                 break
         c = "calculations" if len(answers) > 1 else "calculation"
-        print(f"You carried out {len(answers)} {c}. The results were {'; '.join(map(str, answers))}")
+        print(f"You carried out {len(answers)} {c}. The results were {'; '.join([f'{x:.1f}' for x in answers])}")
         if self.__goodbye_msg is not None:
             print(self.__goodbye_msg)
 
