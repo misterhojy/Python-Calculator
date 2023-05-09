@@ -1,7 +1,10 @@
 def get_number(prompt):
     while True:
         try:
-            num = float(input(prompt))
+            num = input(prompt)
+            if num[0] == "+" or num[0] == "-" or "." in num:
+                raise ValueError
+            num = float(num)
             break
         except ValueError:
             print("Invalid input. Try to provide a valid number.")
@@ -38,9 +41,9 @@ class Calculator:
         self.__goodbye_msg = goodbye_msg
 
     def calculate(self):
-        x = get_number(self.__num1prompt)
+        x = int(get_number(self.__num1prompt))
         opp = get_operator(self.__operator_prompt)
-        y = get_number(self.__num2prompt)
+        y = int(get_number(self.__num2prompt))
         z = None
         if opp == '+':
             z = x + y
