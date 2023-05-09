@@ -54,7 +54,7 @@ class Calculator:
             else:
                 print("Can't divide by zero")
         if z is not None:
-            print(f"{x} {opp} {y} = {z}")
+            print("{0:g} {1} {2:g} = {3}".format(x, opp, y, z))
         return z
 
     def run(self):
