@@ -30,8 +30,8 @@ def halt(prompt):
 
 
 class Calculator:
-    def __init__(self, num1_prompt, operator_prompt,
-                 num2_prompt, goodbye_msg=None):
+    def __init__(self, num1_prompt="Enter the first number: ", operator_prompt="Enter the operator: ",
+                 num2_prompt="Enter the second number: ", goodbye_msg=None):
         self.__num1prompt = num1_prompt
         self.__operator_prompt = operator_prompt
         self.__num2prompt = num2_prompt
@@ -72,7 +72,6 @@ class Calculator:
 
 
 if __name__ == '__main__':
-    calculator_no_exit = Calculator("Enter the first number: ", "Enter the operator: ",
-                                    "Enter the second number: ", "Bye!")
+    calculator_no_exit = Calculator()
 
     calculator_no_exit.run()
